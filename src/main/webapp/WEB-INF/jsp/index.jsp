@@ -34,11 +34,21 @@
             <td>${list.id}</td>
             <td>${list.user_name}</td>
             <td>${list.user_surname}</td>
-
+            <td></td>
         </tr>
     </c:forEach>
 </table>
->
+<hr/>
+<form method="post" action="/save">
+    User firstname:<br>
+    <input type="text" name="firstname">
+    <br><br>
+    User lastname:<br>
+    <input type="text" name="lastname"/>
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
 
 </body>
 </html>
