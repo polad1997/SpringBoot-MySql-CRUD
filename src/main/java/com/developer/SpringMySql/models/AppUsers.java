@@ -4,7 +4,7 @@ package com.developer.SpringMySql.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "table_users")
+@Table(name = "users_table")
 public class AppUsers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

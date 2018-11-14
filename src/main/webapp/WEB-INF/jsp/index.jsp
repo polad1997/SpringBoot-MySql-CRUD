@@ -43,7 +43,7 @@
     User firstname:<br>
     <input type="text" name="firstname">
     <br><br>
-    User lastname:<br>
+    User surname:<br>
     <input type="text" name="lastname"/>
     <br><br>
     <input type="submit" value="Submit">
