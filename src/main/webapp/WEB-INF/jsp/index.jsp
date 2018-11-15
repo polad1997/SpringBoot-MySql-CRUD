@@ -34,8 +34,11 @@
             <td>${list.id}</td>
             <td>${list.user_name}</td>
             <td>${list.user_surname}</td>
-            <td></td>
-        </tr>
+            <td>
+                <a href="/view/${list.id}">View</a>
+                <a href="/delete/${list.id}">Delete</a>
+                <a href="/edit/${list.id}">Edit</a>
+            </td>        </tr>
     </c:forEach>
 </table>
 <hr/>
