@@ -3,18 +3,26 @@ package com.developer.SpringMySql.controllers;
 
 import com.developer.SpringMySql.models.AppUsers;
 import com.developer.SpringMySql.models.AppUsersRepo;
+import com.developer.SpringMySql.services.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+import java.util.List;
+
+@RestController
 public class MainController {
+//    @Autowired
+//    MainService mainService;
+
     @Autowired
     AppUsersRepo appUsersRepo;
+
+//    @RequestMapping("/")
+//    public List<AppUsers> getAllUsers() {
+//        return mainService.selectAllUsers();
+//    }
+
 
     @RequestMapping("/")
     public ModelAndView doHome() {
@@ -23,7 +31,7 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping(value = "/save" , method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ModelAndView doUserSave(@RequestParam("firstname") String user_name, @RequestParam("lastname") String user_surname) {
         ModelAndView mv = new ModelAndView("redirect:/");
         AppUsers appUsers = new AppUsers();
@@ -33,24 +41,24 @@ public class MainController {
         return mv;
     }
 
-    @RequestMapping( value = "/view/{id}", method = RequestMethod.GET)
-    public ModelAndView doView(@PathVariable("id") int id){
+    @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
+    public ModelAndView doView(@PathVariable("id") int id) {
         ModelAndView mv = new ModelAndView("view");
-        mv.addObject("lists",appUsersRepo.findOne(id));
+        mv.addObject("lists", appUsersRepo.findOne(id));
         return mv;
     }
 
-    @RequestMapping( value = "/delete/{id}", method = RequestMethod.GET)
-    public ModelAndView doDelete(@PathVariable("id") int id){
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public ModelAndView doDelete(@PathVariable("id") int id) {
         ModelAndView mv = new ModelAndView("redirect:/");
         appUsersRepo.delete(id);
         return mv;
     }
 
-    @RequestMapping( value = "/edit/{id}", method = RequestMethod.GET)
-    public ModelAndView doEdit(@PathVariable("id") int id){
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public ModelAndView doEdit(@PathVariable("id") int id) {
         ModelAndView mv = new ModelAndView("edit");
-        mv.addObject("lists",appUsersRepo.findOne(id));
+        mv.addObject("lists", appUsersRepo.findOne(id));
         return mv;
     }
 }

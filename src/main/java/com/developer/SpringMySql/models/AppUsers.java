@@ -19,7 +19,9 @@ public class AppUsers {
 
     }
 
-    public AppUsers(String user_name, String user_surname) {
+    public AppUsers(int id, String user_name, String user_surname) {
+        super();
+        this.id = id;
         this.user_name = user_name;
         this.user_surname = user_surname;
     }
