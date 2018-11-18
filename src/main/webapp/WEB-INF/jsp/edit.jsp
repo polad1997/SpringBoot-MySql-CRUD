@@ -22,11 +22,11 @@
 <hr/>
 <form method="post" action="/save">
     <input type="hidden" name="id" value="${lists.id}"/><br/>
-    First name:<br>
+    User name:<br>
     <input type="text" name="firstname" value="${lists.user_name}"/>
     <br>
-    Last name:<br>
-    <input type="text" name="lastname" value="${lists.user_surname}">
+    User email:<br>
+    <input type="text" name="email" value="${lists.user_email}">
     <br><br>
     <input type="submit" value="Submit">
 </form>

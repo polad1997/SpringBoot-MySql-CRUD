@@ -30,8 +30,8 @@
         <td>${lists.user_name}</td>
     </tr>
     <tr>
-        <th>Last Name</th>
-        <td>${lists.user_surname}</td>
+        <th>User eMail
+        <td>${lists.user_email}</td>
     </tr>
 </table>
 <a href="/">Back</a>

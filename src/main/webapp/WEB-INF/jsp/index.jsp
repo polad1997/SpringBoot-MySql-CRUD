@@ -26,14 +26,18 @@
     <tr>
         <th>ID</th>
         <th>User Name</th>
-        <th>User Surname</th>
+        <th>User eMail</th>
+        <th>Phone Number</th>
+        <th>Message</th>
         <th>Action</th>
     </tr>
     <c:forEach var="list" items="${lists}">
         <tr>
             <td>${list.id}</td>
             <td>${list.user_name}</td>
-            <td>${list.user_surname}</td>
+            <td>${list.user_email}</td>
+            <td>${list.user_phone}</td>
+            <td>${list.user_message}</td>
             <td>
                 <a href="/view/${list.id}">View</a>
                 <a href="/delete/${list.id}">Delete</a>
@@ -46,8 +50,8 @@
     User firstname:<br>
     <input type="text" name="firstname">
     <br><br>
-    User surname:<br>
-    <input type="text" name="lastname"/>
+    User email:<br>
+    <input type="text" name="email"/>
     <br><br>
     <input type="submit" value="Submit">
 </form>

@@ -23,20 +23,25 @@ public class MainController {
 //        return mainService.selectAllUsers();
 //    }
 
+//    @RequestMapping("/")
+//    public ModelAndView firstPage() {
+//        return new ModelAndView("login");
+//    }
 
     @RequestMapping("/")
     public ModelAndView doHome() {
-        ModelAndView mv = new ModelAndView("index");
+        ModelAndView mv = new ModelAndView("login");
         mv.addObject("lists", appUsersRepo.findAll());  //SELECT FROM DB
         return mv;
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView doUserSave(@RequestParam("firstname") String user_name, @RequestParam("lastname") String user_surname) {
+    public ModelAndView doUserSave(@RequestParam("firstname") String user_name, @RequestParam("email") String user_email) {
         ModelAndView mv = new ModelAndView("redirect:/");
         AppUsers appUsers = new AppUsers();
         appUsers.setUser_name(user_name);
-        appUsers.setUser_surname(user_surname);
+        appUsers.setUser_email(user_email);
+
         appUsersRepo.save(appUsers);  //INSERT DATA TO DB
         return mv;
     }
