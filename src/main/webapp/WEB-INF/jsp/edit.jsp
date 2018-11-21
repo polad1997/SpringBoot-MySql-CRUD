@@ -27,7 +27,15 @@
     <br>
     User email:<br>
     <input type="text" name="email" value="${lists.user_email}">
-    <br><br>
+    <br>
+    User phone:<br>
+    <input type="text" name="phone" value="${lists.user_phone}"/>
+    <br>
+    User message:<br>
+    <input type="text" name="message" value="${lists.user_message}"/>
+    <br>
+
+
     <input type="submit" value="Submit">
 </form>
 

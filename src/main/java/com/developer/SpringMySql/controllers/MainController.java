@@ -36,15 +36,23 @@ public class MainController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView doUserSave(@RequestParam("firstname") String user_name, @RequestParam("email") String user_email) {
+    public ModelAndView doUserSave(@RequestParam("firstname") String user_name, @RequestParam("email") String user_email,
+                                   @RequestParam("phone") String user_phone, @RequestParam("message") String user_message
+    ) {
         ModelAndView mv = new ModelAndView("redirect:/");
         AppUsers appUsers = new AppUsers();
         appUsers.setUser_name(user_name);
         appUsers.setUser_email(user_email);
-
+        appUsers.setUser_phone(user_phone);
+        appUsers.setUser_message(user_message);
         appUsersRepo.save(appUsers);  //INSERT DATA TO DB
         return mv;
     }
+
+//    @PostMapping("/save")
+//    public void saveData(@RequestBody AppUsers appUsers){
+//        appUsersRepo.save(appUsers);
+//    }
 
     @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
     public ModelAndView doView(@PathVariable("id") int id) {

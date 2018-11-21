@@ -42,7 +42,8 @@
                 <a href="/view/${list.id}">View</a>
                 <a href="/delete/${list.id}">Delete</a>
                 <a href="/edit/${list.id}">Edit</a>
-            </td>        </tr>
+            </td>
+        </tr>
     </c:forEach>
 </table>
 <hr/>
@@ -53,7 +54,15 @@
     User email:<br>
     <input type="text" name="email"/>
     <br><br>
-    <input type="submit" value="Submit">
+    User Phone:<br>
+    <input type="text" name="phone">
+
+    <br><br>
+    User Message:<br>
+    <input type="text" name="message">
+
+    <br><br>
+    <input type="submit" value="Add">
 </form>
 
 

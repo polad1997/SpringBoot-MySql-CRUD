@@ -33,6 +33,14 @@
         <th>User eMail
         <td>${lists.user_email}</td>
     </tr>
+    <tr>
+        <th>User Phone</th>
+        <td>${lists.user_phone}</td>
+    </tr>
+    <tr>
+        <th>User Message</th>
+        <td>${lists.user_message}</td>
+    </tr>
 </table>
 <a href="/">Back</a>
 </body>
