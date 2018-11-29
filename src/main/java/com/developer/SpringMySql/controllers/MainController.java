@@ -36,11 +36,16 @@ public class MainController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView doUserSave(@RequestParam("firstname") String user_name, @RequestParam("email") String user_email,
+    public ModelAndView doUserSave(@RequestParam("id") String id, @RequestParam("firstname") String user_name, @RequestParam("email") String user_email,
                                    @RequestParam("phone") String user_phone, @RequestParam("message") String user_message
     ) {
         ModelAndView mv = new ModelAndView("redirect:/");
         AppUsers appUsers = new AppUsers();
+        if (!id.isEmpty()) {
+            appUsers = (AppUsers) appUsersRepo.findOne(Integer.parseInt(id));
+        } else {
+            appUsers = new AppUsers();
+        }
         appUsers.setUser_name(user_name);
         appUsers.setUser_email(user_email);
         appUsers.setUser_phone(user_phone);
