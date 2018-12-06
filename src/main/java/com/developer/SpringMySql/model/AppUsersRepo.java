@@ -1,4 +1,4 @@
-package com.developer.SpringMySql.models;
+package com.developer.SpringMySql.model;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

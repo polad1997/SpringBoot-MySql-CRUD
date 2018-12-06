@@ -1,8 +1,8 @@
 $(document).ready(
-    function () {
+    function() {
 
         // SUBMIT FORM
-        $("#myForm").submit(function (event) {
+        $("#userForm").submit(function(event) {
             // Prevent the form from submitting via the browser.
             event.preventDefault();
             ajaxPost();
@@ -12,23 +12,23 @@ $(document).ready(
 
             // PREPARE FORM DATA
             var formData = {
-                name: $("#user_name").val(),
-                email: $("#user_email").val(),
-                phone: $("#user_phone").val(),
-                message: $("#user_message").val()
+                user_name : $("#user_name").val(),
+                user_email : $("#user_email").val(),
+                user_phone : $("#user_phone").val(),
+                user_message : $("#user_message").val()
             }
 
             // DO POST
             $.ajax({
-                type: "POST",
-                contentType: "application/json",
-                url: window.location + "save",
-                data: JSON.stringify(formData),
-                dataType: 'json',
-                success: function (result) {
+                type : "POST",
+                contentType : "application/json",
+                url : "save",
+                data : JSON.stringify(formData),
+                dataType : 'json',
+                success : function(result) {
                     if (result.status == "success") {
                         $("#postResultDiv").html(
-                            "" + result.data.name
+                            "" + result.data.user_name
                             + "Post Successfully! <br>"
                             + "---> Congrats !!" + "</p>");
                     } else {
@@ -36,7 +36,7 @@ $(document).ready(
                     }
                     console.log(result);
                 },
-                error: function (e) {
+                error : function(e) {
                     alert("Error!")
                     console.log("ERROR: ", e);
                 }

@@ -48,6 +48,7 @@
 </table>
 <hr/>
 <form method="post" action="/save">
+    <input type="hidden" name="id" value=""/>
     User firstname:<br>
     <input type="text" name="firstname">
     <br><br>

@@ -1,7 +1,7 @@
 package com.developer.SpringMySql.services;
 
-import com.developer.SpringMySql.models.AppUsers;
-import com.developer.SpringMySql.models.AppUsersRepo;
+import com.developer.SpringMySql.model.AppUsers;
+import com.developer.SpringMySql.model.AppUsersRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

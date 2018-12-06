@@ -1,14 +1,12 @@
 package com.developer.SpringMySql.controllers;
 
 
-import com.developer.SpringMySql.models.AppUsers;
-import com.developer.SpringMySql.models.AppUsersRepo;
-import com.developer.SpringMySql.services.MainService;
+import com.developer.SpringMySql.model.AppUsers;
+import com.developer.SpringMySql.model.AppUsersRepo;
+import com.developer.SpringMySql.services.ServiceResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
 
 @RestController
 public class MainController {
@@ -18,15 +16,6 @@ public class MainController {
     @Autowired
     AppUsersRepo appUsersRepo;
 
-//    @RequestMapping("/")
-//    public List<AppUsers> getAllUsers() {
-//        return mainService.selectAllUsers();
-//    }
-
-//    @RequestMapping("/")
-//    public ModelAndView firstPage() {
-//        return new ModelAndView("login");
-//    }
 
     @RequestMapping("/")
     public ModelAndView doHome() {
@@ -50,7 +39,9 @@ public class MainController {
         appUsers.setUser_email(user_email);
         appUsers.setUser_phone(user_phone);
         appUsers.setUser_message(user_message);
+        ServiceResponse<AppUsers> response = new ServiceResponse<AppUsers>("success", appUsers);
         appUsersRepo.save(appUsers);  //INSERT DATA TO DB
+
         return mv;
     }
 
